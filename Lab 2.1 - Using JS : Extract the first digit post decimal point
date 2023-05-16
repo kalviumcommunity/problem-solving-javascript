@@ -1,0 +1,42 @@
+1. QP_8024
+Coding
+Write a program for extracting the digit that immediately follows the decimal point in the given decimal number.
+
+Sample Input: 312.678
+
+Sample Output: 6
+
+Solution :=>
+
+function runProgram(input) {
+	let N=+input.trim();
+    let ans=extractDigitAfterDecimal(N);
+	console.log(ans);
+}
+
+function extractDigitAfterDecimal(N) {
+  const decimalPart = N.toString().split('.')[1];
+    const digit = parseInt(decimalPart[0]);
+    return digit;
+}
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
