@@ -6,6 +6,7 @@ Sample Input: 1234
 
 Sample Output: 3
 
+
 Solution :=>
 
 function runProgram(input) {
