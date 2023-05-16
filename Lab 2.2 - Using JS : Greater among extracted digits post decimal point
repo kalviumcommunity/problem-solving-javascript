@@ -1,0 +1,55 @@
+Question : You are given two numbers. Please extract the digit immediately following the decimal point in both numbers. Once done, please identify the larger among the extracted digits and display it on the screen.
+
+E.g.,
+
+If the numbers are 124.55 and 124.88, the output will read 8.
+In the event of the (extracted) digits being equal - as in the case of 124.55 and 128.54, the output should read The digits are equal.
+
+Solution :=>
+
+function runProgram(input) {
+  let arr = input.trim().split("\n");
+  let max = -Infinity;
+	let N1 = arr[0];
+    let N2 = arr[1];
+	let digit1=extractDigitAfterDecimal(N1);
+	let digit2=extractDigitAfterDecimal(N2);
+	if(digit1>digit2){
+	   console.log(digit1)
+	}else if(digit1<digit2){
+		console.log(digit2)
+	}else if(digit1==digit2){
+		console.log('The digits are equal')
+	}
+}
+
+function extractDigitAfterDecimal(N) {
+  const decimalPart = N.toString().split(".")[1];
+
+  if (decimalPart && decimalPart.length > 0) {
+    const digit = parseInt(decimalPart[0]);
+    return digit;
+  }
+  return null;
+}
+
+if (process.env.USER === "") {
+  runProgram("");
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
