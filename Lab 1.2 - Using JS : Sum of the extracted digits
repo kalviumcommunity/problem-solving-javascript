@@ -6,38 +6,24 @@ Constraint: In the event of either number being an invalid number - like the num
 
 Coding:-
 
-function runProgram(input) {
- 
-  arr=input.trim().split(" ");
-  
+ function runProgram(input) {
+    let arr=input.trim().split(" ");
 	let sum=0;
-  
-	for(let i=0;i<arr.length;i++){
-  
-	   let N=+arr[i];
-     
-	   let str=N.toString();
-     
-	   if(N<10){
-     
-	   return console.log('Invalid number')
-     
-	   }
-     
-	   sum+=extractDigit(str)
-     
-	}
-  
-	console.log(sum)
-  
+   for(let i=0;i<arr.length;i++){
+	    let N=arr[i];
+		if(N<10){
+		return console.log('Invalid number')
+		}
+		sum+=extractedDigitFunc(N)
+   }
+   console.log(sum)
   }
 
-function extractDigit(str){
-
-     return +str[str.length-2];
-     
+const extractedDigitFunc=(N)=>{
+	N=Math.floor(N/10);
+	let extracted_Digit=N%10;
+	return extracted_Digit;
 }
-
 
 
 if (process.env.USER === "") {
