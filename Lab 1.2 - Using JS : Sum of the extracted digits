@@ -1,4 +1,12 @@
- function runProgram(input) {
+1. QP_8022 :-
+
+You are given two numbers that has n digits. Please write a program to extract the second last digit of those 2 numbers and print the sum of extracted digits.
+Constraint: In the event of either number being an invalid number - like the number being lesser than 10 - the program must print 'Invalid number'.
+
+
+Coding:-
+
+function runProgram(input) {
  
   arr=input.trim().split(" ");
   
