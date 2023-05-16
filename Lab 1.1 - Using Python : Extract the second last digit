@@ -1,0 +1,45 @@
+Que:- You are given a number that has n digits. Please write a program to extract the second last digit.
+
+Constraint: In the event of an invalid number like the number being lesser than 10, the program must print 'Invalid number'.
+
+Sample Input: 1234
+
+Sample Output: 3
+
+Solution :=>
+
+function runProgram(input) {
+    let N=+input.trim();
+	if(N<10){
+	console.log('Invalid number');
+	}
+	else{
+	N=N/10;
+	let ans=Math.floor(N%10);
+	console.log(ans);
+	}
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+
