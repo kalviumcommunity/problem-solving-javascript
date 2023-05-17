@@ -1,0 +1,80 @@
+Question : =>
+
+Find sum of n terms
+
+
+
+Given n... Find sum of 1 to n terms
+
+
+
+Example:
+
+Input:
+
+6
+
+Output:
+
+21
+
+
+
+Input:
+
+5
+
+Output:
+
+15
+
+
+
+Note: Make use of long long int in C++ to store a large value
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let N=+input.trim()
+	let s=0;
+	for(let i=0;i<=N;i++){
+		s+=i
+	}
+	console.log(s)
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
