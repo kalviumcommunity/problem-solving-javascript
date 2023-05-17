@@ -1,0 +1,83 @@
+Question : =>
+
+Write a program to display the square pattern. The program should take side length (N) from the user and display the square pattern with side length N.
+
+Constraints: 1<=N<=10
+
+Example
+
+Input
+
+5
+
+Output
+
+* * * * *
+
+* * * * *
+
+* * * * *
+
+* * * * *
+
+* * * * *
+
+Explanation 
+
+Accept a Single Line input from the user to for side length (N). 
+
+If the Input from the user is N=5. Hence a square pattern is displayed, whose side length is 5.
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let N=+input.trim();
+	let i=N;
+	while(i>0){
+	let bag="";
+	let j=0;
+	while(j<N){
+	bag+="*"+" "
+	j++
+	}
+	console.log(bag)
+	i--;
+	}
+	
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
