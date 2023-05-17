@@ -1,0 +1,71 @@
+Question : =>
+
+Given an array, print the elements of the array separated with a comma.
+
+The first line of the input will contain the number of elements in the array.
+
+Sample input :
+
+5
+
+1
+
+2
+
+4
+
+12
+
+0
+
+output :
+
+1,2,4,12,0,
+
+
+
+Solution : =>
+
+function runProgram(input) {
+
+    let ip=input.trim().split('\n');
+    let N=+ip[0];
+    let l=1;
+    let A=[];
+    
+    for(let i=0;i<N;i++){
+    let n=+ip[l++]
+      A.push(n)
+    }
+    
+    let ans='';
+    
+    for(let i=0;i<A.length;i++){
+        ans+=A[i]+",";
+    }
+    
+    console.log(ans)
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
