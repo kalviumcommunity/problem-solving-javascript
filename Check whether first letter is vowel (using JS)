@@ -1,0 +1,74 @@
+Question : =>
+Write a program to check whether the input string has first letter a vowel or not.
+
+Sample Input:
+
+abcd
+
+Sample output:
+
+Yes
+
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+let s = input.trim();
+    if(s[0]=="a" || s[0]=="e" || s[0]=="i" || s[0]=="o" || s[0]=="u" ){
+		   console.log('Yes')
+	}else{
+	console.log('No')
+	}
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+const args = process.argv.slice(2)
+
+process.stdin.on('data', (d) => execute(d.toString()))
+
+function execute(input) {
+    // Add your code here
+    if(input.charAt(0)=="a" || input.charAt(0)=="e"|| input.charAt(0)=="i"|| 
+ input.charAt(0)=="o"||input.charAt(0)=="u"||input.charAt(0)=="A" || input.charAt(0)=="E"|| 
+ input.charAt(0)=="I"|| input.charAt(0)=="O"||input.charAt(0)=="U"){
+   console.log("Yes");
+ }
+ else{
+   console.log("No");
+ }
+    
+}
+ 
+ //SOLUTION ENDS//
+
