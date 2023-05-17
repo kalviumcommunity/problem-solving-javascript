@@ -1,0 +1,70 @@
+ Question : =>
+ 
+ Find whether given year is even or odd
+
+Given input of an year we need to print if the given year is even or odd
+
+Example:
+
+Input :
+
+2019
+
+Output:
+
+odd
+
+
+
+Input:
+
+2020
+
+Output:
+
+even
+ 
+ Solution : =>
+ 
+ //YOUR CODE// 
+ 
+function runProgram(input) {
+    let Year=+input.trim();
+	if(Year%2==1) console.log('odd');
+	else console.log('even');
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
+ 
+ 
