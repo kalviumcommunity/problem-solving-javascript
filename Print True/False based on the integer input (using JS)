@@ -1,0 +1,55 @@
+Question :=> Get an input and print "True" if it is greater than 100 and "False" if the input is less than 100 using python.
+
+Sample Input: 20
+
+Sample Output: False
+
+Solution :=>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+   let N=+input.trim();
+   printTrueFalse(N)
+}
+
+
+const printTrueFalse=(N)=>{
+	if(N>100){
+	console.log('True');
+	}else{
+	console.log('False');
+	}
+}
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
