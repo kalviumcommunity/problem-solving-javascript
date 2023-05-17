@@ -1,0 +1,59 @@
+Que : =>
+Write a program to print all the vowels of the Input string. Given that all the Input strings are in lowercase.
+
+Sample Input kalvium
+
+Sample Output: aiu
+
+Explanation: a, i, and u are the vowels in the given string.
+
+
+
+Soln:=>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let str=input.trim();
+	let ans='';
+	for(let i=0;i<str.length;i++){
+	if(str[i]=="a" || str[i]=="e" || str[i]=="i" || str[i]=="o" ||  str[i]=="u" ){
+	  ans+=str[i]
+	}
+	}
+	console.log(ans)
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
+
