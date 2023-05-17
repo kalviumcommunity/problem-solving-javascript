@@ -1,0 +1,54 @@
+Que : =>
+Problem statement: To print difference between a and b
+
+Given input as two numbers num1 and num2.Need to print the difference between the two numbers
+
+Note :make use of abs to print the absolute difference between a and b
+
+Example:
+
+Input1:
+
+9 2
+
+Output:
+
+7
+
+Input 2:
+
+100 90
+
+Output:
+
+10
+
+Soln : =>
+function runProgram(input) {
+    let A=input.trim().split(" ").map(Number);
+    let diff=A[0]-A[1];
+    console.log(diff)
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
