@@ -1,0 +1,68 @@
+Question : => Check whether a given number(!=0) is positive or negative
+
+Give a number num we need to check if it's a positive number or negative
+
+If it's positive print positive and if it's negative print negative
+
+
+Example:
+
+Input:
+
+10
+
+Output:
+
+positive
+
+
+Input:
+
+-10
+
+Output:
+
+negative
+
+Solution :=>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let N=+input.trim();
+	if(N<0) console.log('negative')
+	else console.log('positive')
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
