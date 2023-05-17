@@ -1,0 +1,66 @@
+Que : =>
+Problem statement: Print "P" if marks are above 40 else "F"
+
+Given input as a marks of the student you need to tell if he is passed or failed in the exam. If the marks are greater than 40 then he is passed you need to print "P" else he failed the exam you need to print "F".
+
+Example:
+
+Input 1:
+
+90:
+
+Output:
+
+P
+
+Input 2:
+
+39
+
+Output:
+
+F
+
+Soln : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let marks=+input.trim();
+	
+	if (marks<=40) console.log("F")
+	else console.log("P")
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
