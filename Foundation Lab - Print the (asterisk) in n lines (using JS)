@@ -1,0 +1,67 @@
+Question : =>
+
+Write a program to use nested loops to print the * in n lines n times in each line.
+
+
+
+Sample Input: 3
+
+Sample Output:
+
+***
+
+***
+
+***
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let N=+input.trim();
+	
+	for(let i=0;i<N;i++){
+	let s='';
+	for(let j=0;j<N;j++){
+	s+="*";
+	}
+	console.log(s)
+	}
+	
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
+
