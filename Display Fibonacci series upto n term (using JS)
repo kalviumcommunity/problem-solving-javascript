@@ -1,0 +1,64 @@
+Question : =>
+
+Display Fibonacci series upto n term
+
+Given n need to print the fibonacci series upto n th terms.
+
+Example:
+
+Input:
+
+5
+
+Output:
+
+0 1 1 2 3 5
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let N=+input.trim();
+	let i=0;ans=[0,1]
+	while(ans.length<=N){
+	   let s=ans[i]+ans[i+1];
+	   ans.push(s)
+	   i++
+	}
+	console.log(ans.join(' '))
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
+
