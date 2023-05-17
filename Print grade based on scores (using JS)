@@ -1,0 +1,88 @@
+Que : =>
+You are provided with the following table. Based on the student's score, you are expected to print the appropriate grade. Please write a program for the same.
+ 1) 0-39 => F
+ 2) 40-50 => D
+ 3) 51-60 => C
+ 4) 61-70 => F
+ 5) 71-80 => D
+ 6) 81-100 => C
+ 
+
+In case any invalid score is provided that's outside of the allowed range, the program must print 'Invalid input'.
+
+
+Soln : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let N=+input.trim();
+	if(N>=0 && N<=39) console.log("F");
+	else if(N>=40 && N<=50) console.log("D");
+	else if(N>=51 && N<=60) console.log("C");
+	else if(N>=61 && N<=70) console.log("B");
+	else if(N>=71 && N<=80) console.log("A");
+	else if(N>=81 && N<=100) console.log("S");
+	else console.log('Invalid input')
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+const args = process.argv.slice(2)
+
+process.stdin.on('data', (d) => execute(d.toString()))
+
+function execute(input) {
+    // Add your code here
+    if(input>=0 && input<=39){
+  console.log("F");
+  }
+  else if(input>=40 && input <=50){
+    console.log("D");
+  }
+  else if(input>=51 && input<=60){
+    console.log("C");
+  }
+  else if (input>=61 && input<=70){
+    console.log("B");
+  }
+  else if (input>=71 && input<=80){
+    console.log("A");
+  }
+  else if (input>=81 && input<=100){
+    console.log("S");
+  }
+  else{
+    console.log("Invalid input");
+  }
+    
+}
+ 
+ //SOLUTION ENDS//
