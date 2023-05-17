@@ -1,0 +1,53 @@
+Question : =>
+
+Given an Input year. A year is a leap year if it has 365 days. Write a program to output "leap year" if the given is a leap year otherwise print "not leap year".
+
+Constraints: 100 < year < 10^5
+
+Sample Input: 2000
+
+Sample Output: leap year
+
+
+Solution :=>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let Y=+input.trim();
+	if(Y%4==0 && Y%100!=0 || Y%400==0) console.log('leap year')
+	else console.log('not leap year')
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
