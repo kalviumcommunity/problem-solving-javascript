@@ -1,0 +1,104 @@
+Question : =>
+
+Please write a program to read the temperature in centigrade and display a suitable message according to the temperature state below.
+
+Temp < 0: Freezing weather
+
+Temp 0-10: Very cold weather
+
+Temp 10-20: Cold weather
+
+Temp 20-30: Normal in temp
+
+Temp 30-40: It's hot
+
+Temp >=40: It's very hot
+
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let T=+input.trim();
+	if(T<0)
+	   console.log('Freezing weather');
+	   
+	else if(T>=0 && T<10)
+	   console.log('Very cold weather');
+	   
+	else if(T>=10 && T<20)
+	   console.log('Cold weather');
+	
+	else if(T>=20 && T<30)
+	   console.log('Normal in temp');
+	
+	
+	else if(T>=30 && T<40)
+	   console.log("It's hot");
+	   
+	else if(T>=40)
+	   console.log("It's very hot");
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+const args = process.argv.slice(2)
+
+process.stdin.on('data', (d) => execute(d.toString()))
+
+function execute(input) {
+    // Add your code here
+    if (input < 0){
+    console.log("Freezing weather")
+  }
+  else if(input>= 0 && input<10){
+    console.log("Very cold weather")
+  } 
+  else if(input>=10 && input<20){
+    console.log("Cold weather")
+  }
+  else if(input>=20 && input<30){
+    console.log("Normal in temp")
+  }
+  else if(input>=30 && input<40){
+    console.log("It's hot")
+  }
+  else
+  {
+    console.log("It's very hot")
+  }
+    
+}
+ 
+ //SOLUTION ENDS//
+
+
