@@ -1,0 +1,72 @@
+Question : =>
+
+Print "N" if the temperature is less than zero otherwise "P"
+
+
+
+Given input of the temperature need to print N if it is less than zero or else print P
+
+Example:
+
+Input:
+
+29.5
+
+Output:
+
+P
+
+Input:
+
+-5
+
+Output:
+
+N
+
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let T=+input.trim();
+	if(T<0) console.log('N')
+	else console.log('P')
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
+
+  
