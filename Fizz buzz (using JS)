@@ -1,0 +1,59 @@
+Question : =>
+Given a number n. Write a program that prints the numbers from 1 to n. But for multiples of three, print Fizz instead of the number and for the multiples of five, print Buzz. For numbers that are multiples of both three and five, print FizzBuzz. Print -1 if n does not follow the constraints.
+
+Constraints: 0 < n < =100
+
+Sample Input: 5
+
+Sample Output: 1 2 Fizz 4 Buzz
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let N=+input.trim();
+	let arr=[];
+	for(let i=1;i<=N;i++){
+	 if(i%3==0 && i%5==0) arr.push('FizzBuzz')
+	 else if(i%3==0 && i%5!=0) arr.push('Fizz')
+	 else if(i%3!=0 && i%5==0) arr.push('Buzz')
+	 else arr.push(i)
+	}
+	console.log(arr.join(' '))
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
+
