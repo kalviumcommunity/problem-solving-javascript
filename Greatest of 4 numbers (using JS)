@@ -1,0 +1,58 @@
+Que : =>
+Given 4 numbers a,b,c, d, please write a program to find the greatest amongst them.
+
+Soln : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let arr=input.trim().split("\n").map(Number);
+	let max=Math.max(arr[0],arr[1],arr[2],arr[3])
+	console.log(max)
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+const args = process.argv.slice(2)
+process.stdin.on('data', (d) => execute(...d.toString().split('\n').filter(i => i).map(i => parseInt(i))))
+
+function execute (a, b, c, d) {
+    if (a >= b && a >= c && a >= d) {
+        console.log(a)
+    } else if (b >= a && b >= c && b >= d) {
+        console.log(b)
+    } else if (c >= a && c >= b && c >= d) {
+        console.log(c)
+    } else {
+        console.log(d)
+    }
+}
+ 
+ //SOLUTION ENDS//
