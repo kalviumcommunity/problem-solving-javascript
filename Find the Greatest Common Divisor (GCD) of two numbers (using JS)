@@ -1,0 +1,62 @@
+Question : =>
+
+Problem statement - Write a program in C++ to find the Greatest Common Divisor (GCD) of two numbers using a for loop.
+
+Input : The input contains 2 integers n1 and n2 , for which the user needs to find their GCD.
+
+Output : Print the GCD of two numbers.
+
+Constraints : 1 < = n1 < = n2 < = 100000.
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let A = input.trim().split(' ');
+	let N1=A[0];
+	let N2=A[1];
+	let ans=[];
+	let max=Math.max(N1,N2);
+	for(let i=1;i<max;i++){
+	   if(N1%i==0 && N2%i==0){
+	   ans.push(i)
+	   }
+	}
+    console.log(ans[ans.length-1])
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
+
