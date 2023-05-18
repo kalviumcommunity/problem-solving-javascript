@@ -1,0 +1,44 @@
+Question : =>
+
+Problem statement: Write a program to calculate the cube of a given number n.
+
+Sample input :
+
+3
+
+output :
+
+27
+
+
+
+Solution : =>
+
+function runProgram(input) {
+    let N=+input.trim();
+    let cube=N**3
+    console.log(cube)
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
