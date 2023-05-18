@@ -1,0 +1,67 @@
+Question : =>
+
+Write a program to pass two numbers a and b to a function called product and print their product.
+
+
+
+Sample Input: 
+
+2 
+
+4
+
+
+
+Sample Output:
+
+8
+
+
+Solution : =>
+
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    input = input.trim().split('\n');
+	let N1=+input[0].trim();
+	let N2=+input[1].trim();
+	let ans=Product(N1,N2)
+    console.log(ans)
+}
+
+const Product=(N1,N2)=>{
+   return N1*N2;
+   }
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
