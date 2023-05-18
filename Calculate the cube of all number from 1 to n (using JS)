@@ -1,0 +1,54 @@
+Question : =>
+
+Write a program to calculate the cube of all numbers from 1 to n where n is an Input number.
+
+Sample Input: 3
+
+Sample Output: 1 8 27
+
+Explanation: The cube from 1 to 3 are 1, 8, and 27.
+
+
+Solution  : =>
+
+function runProgram(input) {
+
+    let N=+input.trim();
+    
+    let ans=[];
+    
+    for(let i=1;i<=N;i++){
+    
+       let cube=i**3;
+       
+       ans.push(cube);
+       
+    }
+    
+    console.log(ans.join(' '))
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+
+
