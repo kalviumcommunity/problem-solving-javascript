@@ -1,0 +1,113 @@
+Question : =>
+
+Klaus Mikaelson and his daughter Hope were arguing about who is the smartest person in the family. Klaus who is a world-known Computer Engineer asked Hope who has not yet completed her college to write a program to sort the given array in ascending order. Can you help Hope?
+
+
+
+Input Format:
+
+Input consists of 1 integer and 1 array.
+
+The integer corresponds to the size of the array.
+
+
+
+Output Format:
+
+The output consists of array elements after sorting.
+
+
+
+Sample Input 1:
+
+5
+
+54
+
+68
+
+25
+
+14
+
+74
+
+
+
+Sample Output 1:
+
+The sorted array is:
+
+14
+
+25
+
+54
+
+68
+
+74
+
+
+
+Explanation:
+
+Here we can compare the 1st value(54)with all the other values,54 is greater than 14 and 25 and hence 54 will get printed in the third position.
+
+Repeat the same process for all the remaining values to get the output in sorted order.
+
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let ip = input.trim().split('\n');
+    let N=+ip[0].trim();
+	let A=ip[1].trim().split(' ').map(Number);
+	for(let i=0;i<N;i++){
+	    for(let j=0;j<N-i-1;j++){
+			if(A[j]>A[j+1]){
+				let T=A[j];
+				A[j]=A[j+1];
+				A[j+1]=T;
+			}
+		}
+	}
+	
+	console.log(`Sorted array is: ${A.join(' ')}`)
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
