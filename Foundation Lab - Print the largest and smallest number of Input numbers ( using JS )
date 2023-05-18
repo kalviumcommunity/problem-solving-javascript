@@ -1,0 +1,67 @@
+Question : =>
+
+Problem statement: Write a program to print the largest and smallest number of Input numbers.
+
+The first line contains the count of numbers.
+
+Sample input :
+
+5
+
+1
+
+4
+
+7
+
+0
+
+-1
+
+output :
+
+largest = 7
+
+smallest = -1
+
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let Arr = input.trim().split('\n').map(Number);
+    let min=Infinity;max=-Infinity;
+	for(let i=0;i<Arr.length;i++){
+	  max=Math.max(max,Arr[i]);
+	  min=Math.min(min,Arr[i]);
+	}
+	console.log(`largest=${max}`)
+	console.log(`smallest=${min}`)
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+
+
