@@ -1,0 +1,57 @@
+Question : =>
+
+Problem statement - Write a program to print 1 to n in reverse order.
+
+Sample Input: 4
+
+Sample Output: 4 3 2 1
+
+Explanation: To print numbers from 1 to 4 it is, 1 2 3 4 and the reverse of the same is 4 3 2 1
+
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let N = +input.trim();
+    let ans=[];
+	for(let i=N;i>=1;i--){
+	ans.push(i)
+	}
+	console.log(ans.join(' '))
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
