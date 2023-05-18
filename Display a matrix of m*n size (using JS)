@@ -1,0 +1,70 @@
+Question : =>
+
+Write a program to display a matrix of m X n size that consists of only 1 where m and n are Inputs of rows and columns respectively.
+
+
+
+Sample Input: 2 3
+
+Sample Input:
+
+1 1 1
+
+1 1 1
+
+
+
+Explanation: The Input rows are 2 and the Input columns are 3. Hence, the shown matrix is a 2X3 matrix.
+
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let A = input.trim().split(' ');
+	let N=A[0];M=A[1];
+	for(let i=0;i<N;i++){
+	let a=[];
+	for(let j=0;j<M;j++){
+	
+	a.push(1)
+	}
+	console.log(a.join(' '))
+	}
+    
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
