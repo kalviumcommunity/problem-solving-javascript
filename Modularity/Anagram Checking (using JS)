@@ -1,46 +1,13 @@
-Question :=>
-
-Anagram Checking
-
-Given two strings s and t, return true if t is an anagram of s, and false otherwise.
-
-An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
-
-
-
-Example 1:
-
-
-
-Input: s = "anagram", t = "nagaram"
-
-Output: true
-
-
-
-Example 2:
-
-
-
-Input: s = "rat", t = "car"
-
-Output: false
-
-
-
-Solution : =>
-
 //YOUR CODE// 
  
-function runProgram(input) {
+ function runProgram(input) {
     input=input.trim().split(' ');
-	let s1=input[0].trim();
-	let s2=input[1].trim();
-	isAnagram(s1,s2)
+	let s1Arr=input[0].trim().split('').map(String);
+	let s2Arr=input[1].trim().split('').map(String);
+	isAnagram(s1Arr,s2Arr)
 }
 
 const isAnagram=(s1,s2)=>{
-
     if (s1.length!==s2.length) return console.log(0)
 	let res=chkAnagram(s1,s2)
 	if (res) console.log(1)
@@ -49,56 +16,18 @@ const isAnagram=(s1,s2)=>{
 }
 
 const chkAnagram=(s1,s2)=>{
-   let obj1={},obj2={};
-   [A11,A12]=createObj(s1,obj1);
-   [A21,A22]=createObj(s2,obj2);
-  //console.log(A11,A12,A21,A22)//
-   A11.sort((a,b)=>{
+   s1.sort((a,b)=>{
      if(a>b) return 1;
 	 if(a<b) return -1;
 	 return 0;
    });
-   A12.sort((a,b)=>a-b);
-   A21.sort((a,b)=>{
+    s2.sort((a,b)=>{
      if(a>b) return 1;
 	 if(a<b) return -1;
 	 return 0;
-   });;
-   A22.sort((a,b)=>a-b);
-   //console.log(A11,A12,A21,A22)//
-   let flag=true;
-   for(let i=0;i<A11.length;i++){
-      if(A11[i]!==A21[i] ){
-	       flag=!flag;
-		   break;
-	  }
-	  if(A12[i]!=A22[i]){
-	        f=!f;
-			break;
-	  }
-   }
-   return flag;
+   });
+  return s1.join('')==s2.join('')
 }
-
-const createObj=(s,obj)=>{
-
-   for(let i=0;i<s.length;i++){
-	   let k=s[i]
-       if(!obj[k]){
-	      obj[k]=1
-	   }else{
-	      obj[k]++;
-	   }
-   }
-   
-   let arr1=[];arr2=[];
-   
-	for(let k in obj){
-	  arr1.push(k)
-	  arr2.push(obj[k])
-    }
-   return [arr1,arr2]
-} 
 
 
 if (process.env.USER === "") {
@@ -121,6 +50,8 @@ if (process.env.USER === "") {
     process.exit(0);
   });
 }
+ 
+
  
  //YOUR CODE ENDS// 
  
