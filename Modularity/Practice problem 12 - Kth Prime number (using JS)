@@ -1,0 +1,87 @@
+Question : =>  Kth Prime Number
+
+Given k, print the kth prime number from n prime numbers
+
+
+
+constraints of N
+
+
+
+  1<=N<=104
+
+
+
+Suppose from the given prime numbers 2,3,5,7,11
+
+
+
+The 3rd prime number is 5
+
+
+
+Sample Input 1:
+
+8
+
+Output:
+
+19
+
+
+
+Sample Input 2:
+
+3
+
+Output:
+
+5
+
+
+Solution : =>
+
+function runProgram(input) {
+  let K=input.trim();
+	let primeArr=[];
+	let i=2;
+	while(primeArr.length<=104){
+	    let res=checkPrime(i);
+		if(res) primeArr.push(i);
+		i++;
+	}
+	console.log(primeArr[K-1])
+}
+
+const checkPrime=(N)=>{
+     let flag=true;
+	 for(let i=2;i<N;i++){
+		 if(N%i==0){
+		   flag=!flag;
+		   break;
+		 }
+	 }
+	   return flag
+}
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
