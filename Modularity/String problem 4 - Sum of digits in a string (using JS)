@@ -1,0 +1,77 @@
+Question : =>
+
+A string input with digits in it will be given, write a program to find the sum of the digits in the String.
+
+
+
+
+
+Sample Input 1:
+
+Hello World1234
+
+Output:
+
+10
+
+
+
+Sample Input 2:
+
+711RedZone
+
+Output:
+
+9
+
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    let Str=input.trim();
+	let sum=0;nArr=[0,1,2,3,4,5,6,7,8,9];
+    for(let i=0;i<Str.length;i++){
+		 for(let j=0;j<nArr.length;j++){
+		     if (nArr[j]==Str[i]){
+			     sum+=+Str[i];
+			 }
+		 }
+	}
+	console.log(sum);
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
