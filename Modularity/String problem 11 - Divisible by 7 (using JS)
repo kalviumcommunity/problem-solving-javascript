@@ -1,0 +1,67 @@
+Question  : =>
+
+Given an n-digit large number in form of string, check whether it is divisible by 7 or not. Print 1 if divisible by 7, otherwise 0.
+
+
+Example 1:
+
+Input: num = "8955795758"
+
+Output: 1
+
+Explanation: 8955795758 is divisible by 7.
+
+
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+   let N=+input.trim();
+   let ans=chkDivisibilityBy7(N)
+   console.log(ans)
+}
+
+const chkDivisibilityBy7=(N)=>{
+	if (N%7==0) {
+	return 1
+	}
+	else 
+	{
+	return 0
+	}
+}
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
