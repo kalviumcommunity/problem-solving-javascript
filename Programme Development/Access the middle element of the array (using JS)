@@ -1,0 +1,78 @@
+Question : =>
+
+Take an array size and elements Input and access the middle element
+
+
+
+Given an array of size n need to print the middle element
+
+Example :
+
+Input:
+
+5
+
+10 20 30 40 50
+
+Output;
+
+30
+
+
+
+Input:
+
+4
+
+1 2 3 4
+
+Output:
+
+3
+
+
+
+Solution : =>
+
+//YOUR CODE// 
+ 
+function runProgram(input) {
+    input=input.trim().split('\n');
+	let N=+input[0];
+	let Arr=input[1].trim().split(' ').map(Number);
+	let middle_Index=Math.floor(N/2)
+	console.log(Arr[middle_Index])
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
+ 
+ //YOUR CODE ENDS// 
+ 
+ 
+ //SOLUTION MENTIONED BELOW // 
+ 
+ 
+
+ 
+ //SOLUTION ENDS//
