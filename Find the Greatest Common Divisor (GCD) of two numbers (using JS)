@@ -19,7 +19,7 @@ function runProgram(input) {
 	let N2=A[1];
 	let ans=[];
 	let max=Math.max(N1,N2);
-	for(let i=1;i<max;i++){
+	for(let i=0;i<=max;i++){
 	   if(N1%i==0 && N2%i==0){
 	   ans.push(i)
 	   }
