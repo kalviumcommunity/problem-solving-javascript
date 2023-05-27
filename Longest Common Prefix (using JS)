@@ -1,0 +1,79 @@
+Question :=>
+
+Longest Common Prefix
+
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+
+
+Sample Input 1:
+
+[flower, flight, flow]
+
+Output:
+
+fl
+
+
+
+Sample Input 2:
+
+[race, dog,car]
+
+Output:
+
+""
+
+
+
+
+Solution : =>
+
+ function runProgram(input) {
+    input=input.trim().split("\n");
+    let N=input[0].trim();
+    let arr=input[1].trim().split(' ');
+    let ans=''
+    for(let i=0;i<arr[0].length;i++){
+	let flag=true;
+	  for(let j=0;j<arr.length-1;j++){
+	     if(arr[j][i]!=arr[j+1][i]){
+		     flag=!flag;
+			 break;
+		 }
+		 //console.log(arr[j][i],arr[j+1][i])//
+	  }
+	 // console.log(i,arr[0][i],flag)//
+	  if(flag==true){
+	     ans+=arr[0][i];
+	  }else{
+	     break;
+	  }
+	}
+	console.log(ans)
+  }
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
