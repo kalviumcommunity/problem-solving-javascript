@@ -1,0 +1,18 @@
+Question =>
+
+You are given two numbers that has n digits. Please write a program to extract the second last digit of those 2 numbers and print the sum of extracted digits.
+
+In the event of either number being an invalid number - like the number being lesser than 10 - the program must print 'Invalid number'.
+
+Solution =>
+
+a=int(input());
+b=int(input());
+c=a/10%10;
+d=b/10%10;
+sum=c+d;
+if (a<10 or b<10):
+	print('Invalid number');
+else:
+	print(int(sum))
+
