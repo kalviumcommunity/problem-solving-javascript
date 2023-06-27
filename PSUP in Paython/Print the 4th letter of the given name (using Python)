@@ -1,0 +1,13 @@
+Question =>
+
+Write a program to print the 4th letter of the given name.
+
+Sample Input: Anurag
+
+Sample Output: r
+
+
+Solution =>
+
+s=input();
+print(s[3])
