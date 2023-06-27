@@ -1,0 +1,14 @@
+Question =>
+
+Write a program for extracting the digit that immediately follows the decimal point in the given decimal number.
+
+Sample Input: 312.678
+
+Sample Output: 6
+
+
+Solution =>
+
+s=(input());
+
+print(s[s.index(".")+1])
